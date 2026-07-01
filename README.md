@@ -133,6 +133,23 @@ src/
 
 ### Analí Salvador
 
-<!-- Analí agrega aquí sus capturas con subtítulo, ej: -->
-<!-- ![Evidencia 1](docs/anali-1.png) -->
-<!-- *Descripción de la captura* -->
+![Evidencia 1](docs/anali-1.png)
+*Configuración de API de TMDB y token de acceso*
+
+![Evidencia 2](docs/ederd-2.png)
+*Proyecto levantado con datos mock (npm run dev)*
+
+![Evidencia 3](docs/ederd-3.png)
+*Consumo de la API de TMDB - catálogo de películas*
+
+![Evidencia 4](docs/ederd-4.png)
+*Carrito de compras con estado global (Zustand)*
+
+![Evidencia 5](docs/ederd-5.png)
+*Página de detalle de película*
+
+![Evidencia 6](docs/ederd-6.png)
+*Simulación de pasarela de pago - checkout*
+
+![Evidencia 7](docs/ederd-7.png)
+*Tests unitarios ejecutándose correctamente*
