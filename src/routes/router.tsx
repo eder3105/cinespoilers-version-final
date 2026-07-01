@@ -4,7 +4,7 @@ import { MainLayout } from "@/layouts/main-layout";
 
 import HomePage from '@/pages/home-page';
 import { MovieDetailPage } from "@/pages/movie-detail-page";
-import { MoviesPage } from "@/pages/movies-page";
+import MoviesPage from "@/pages/movies-page";
 
 export const router = createBrowserRouter([
   {

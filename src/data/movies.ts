@@ -4,6 +4,7 @@ export const movies: Movie[] = [
   {
     id: "1",
     title: "Interstellar",
+    genre: "Sci-Fi",
     posterUrl:
       "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
     synopsis: "A journey beyond the stars.",
@@ -11,6 +12,7 @@ export const movies: Movie[] = [
   {
     id: "2",
     title: "Dune",
+    genre: "Sci-Fi",
     posterUrl:
       "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
     synopsis: "The future of Arrakis.",
@@ -18,6 +20,7 @@ export const movies: Movie[] = [
   {
     id: "3",
     title: "Oppenheimer",
+    genre: "Drama",
     posterUrl:
       "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
     synopsis: "The story behind the atomic age.",

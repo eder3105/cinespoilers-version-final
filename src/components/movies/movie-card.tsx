@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import type { Movie } from "@/types/movie";
 
 import {
+  Badge,
+} from "@/components/ui/badge";
+import {
   Card,
   CardContent,
   CardHeader,
@@ -23,7 +26,14 @@ const MovieCard = ({ movie }: Props) => {
           className="aspect-2/3 w-full object-cover"
         />
 
-        <CardHeader>
+        <CardHeader className="gap-3">
+          <Badge
+            variant="secondary"
+            className="w-fit"
+          >
+            {movie.genre}
+          </Badge>
+
           <CardTitle>
             {movie.title}
           </CardTitle>

@@ -36,15 +36,23 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-2 md:flex">
           {navigationItems.map((item) => (
-            <Button
+            <NavLink
               key={item.href}
-              asChild
-              variant="ghost"
+              to={item.href}
+              className={({ isActive }) => `
+                rounded-md
+                px-3
+                py-2
+                text-sm
+                font-medium
+                transition-colors
+                hover:bg-accent
+                hover:text-accent-foreground
+                ${isActive ? "text-blue-600" : "text-muted-foreground"}
+              `}
             >
-              <NavLink to={item.href}>
-                {item.label}
-              </NavLink>
-            </Button>
+              {item.label}
+            </NavLink>
           ))}
         </nav>
 
@@ -62,16 +70,23 @@ export function Navbar() {
           <SheetContent side="right">
             <div className="mt-8 flex flex-col gap-2">
               {navigationItems.map((item) => (
-                <Button
+                <NavLink
                   key={item.href}
-                  asChild
-                  variant="ghost"
-                  className="justify-start"
+                  to={item.href}
+                  className={({ isActive }) => `
+                    rounded-md
+                    px-3
+                    py-2
+                    text-sm
+                    font-medium
+                    transition-colors
+                    hover:bg-accent
+                    hover:text-accent-foreground
+                    ${isActive ? "text-blue-600" : "text-muted-foreground"}
+                  `}
                 >
-                  <NavLink to={item.href}>
-                    {item.label}
-                  </NavLink>
-                </Button>
+                  {item.label}
+                </NavLink>
               ))}
             </div>
           </SheetContent>
