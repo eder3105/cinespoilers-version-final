@@ -4,4 +4,5 @@ export interface Movie {
   genre: string;
   posterUrl: string;
   synopsis: string;
+  price: number;
 }

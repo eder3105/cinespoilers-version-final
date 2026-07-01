@@ -1,5 +1,7 @@
-import { Film, Menu } from "lucide-react";
+import { Film, Menu, ShoppingCart } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
+
+import { useCartStore } from "@/store/cart-store";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +22,8 @@ const navigationItems = [
 ];
 
 export function Navbar() {
+  const totalItems = useCartStore((state) => state.getTotalItems());
+
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -29,9 +33,7 @@ export function Navbar() {
         >
           <Film className="h-5 w-5 text-blue-600" />
 
-          <span className="text-lg">
-            CineSpoilerS
-          </span>
+          <span className="text-lg">CineSpoilerS</span>
         </Link>
 
         <nav className="hidden items-center gap-2 md:flex">
@@ -54,15 +56,23 @@ export function Navbar() {
               {item.label}
             </NavLink>
           ))}
+
+          <Link
+            to="/cart"
+            className="relative flex items-center rounded-md px-3 py-2 hover:bg-accent"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {totalItems > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
+                {totalItems}
+              </span>
+            )}
+          </Link>
         </nav>
 
         <Sheet>
           <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-            >
+            <Button variant="ghost" size="icon" className="md:hidden">
               <Menu />
             </Button>
           </SheetTrigger>
@@ -88,6 +98,13 @@ export function Navbar() {
                   {item.label}
                 </NavLink>
               ))}
+
+              <Link
+                to="/cart"
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent"
+              >
+                Cart ({totalItems})
+              </Link>
             </div>
           </SheetContent>
         </Sheet>

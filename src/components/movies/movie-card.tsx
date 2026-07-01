@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 
 import type { Movie } from "@/types/movie";
 
-import {
-  Badge,
-} from "@/components/ui/badge";
+import { useCartStore } from "@/store/cart-store";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -17,6 +18,8 @@ interface Props {
 }
 
 const MovieCard = ({ movie }: Props) => {
+  const addToCart = useCartStore((state) => state.addToCart);
+
   return (
     <article>
       <Card className="overflow-hidden">
@@ -27,16 +30,11 @@ const MovieCard = ({ movie }: Props) => {
         />
 
         <CardHeader className="gap-3">
-          <Badge
-            variant="secondary"
-            className="w-fit"
-          >
+          <Badge variant="secondary" className="w-fit">
             {movie.genre}
           </Badge>
 
-          <CardTitle>
-            {movie.title}
-          </CardTitle>
+          <CardTitle>{movie.title}</CardTitle>
         </CardHeader>
 
         <CardContent>
@@ -44,17 +42,18 @@ const MovieCard = ({ movie }: Props) => {
             {movie.synopsis}
           </p>
 
-          <Link
-            to={`/movies/${movie.id}`}
-            className="
-              text-sm
-              font-medium
-              text-blue-600
-              hover:underline
-            "
-          >
-            View details
-          </Link>
+          <div className="flex items-center justify-between">
+            <Link
+              to={`/movies/${movie.id}`}
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              View details
+            </Link>
+
+            <Button size="sm" onClick={() => addToCart(movie)}>
+              Add to cart
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </article>
