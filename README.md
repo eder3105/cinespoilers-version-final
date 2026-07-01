@@ -136,20 +136,20 @@ src/
 ![Evidencia 1](docs/anali-1.png)
 *Configuración de API de TMDB y token de acceso*
 
-![Evidencia 2](docs/ederd-2.png)
+![Evidencia 2](docs/anali-2.png)
 *Proyecto levantado con datos mock (npm run dev)*
 
-![Evidencia 3](docs/ederd-3.png)
+![Evidencia 3](docs/anali-3.png)
 *Consumo de la API de TMDB - catálogo de películas*
 
-![Evidencia 4](docs/ederd-4.png)
+![Evidencia 4](docs/anali-4.png)
 *Carrito de compras con estado global (Zustand)*
 
-![Evidencia 5](docs/ederd-5.png)
+![Evidencia 5](docs/anali-5.png)
 *Página de detalle de película*
 
-![Evidencia 6](docs/ederd-6.png)
+![Evidencia 6](docs/anali-6.png)
 *Simulación de pasarela de pago - checkout*
 
-![Evidencia 7](docs/ederd-7.png)
+![Evidencia 7](docs/anali-7.png)
 *Tests unitarios ejecutándose correctamente*
